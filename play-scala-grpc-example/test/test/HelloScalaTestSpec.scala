@@ -22,7 +22,7 @@ class HelloScalaTestSpec extends PlaySpec with GuiceOneServerPerTest with Server
 
   "A Play server bound to a gRPC router" must {
     "give a 404 when routing a non-gRPC request" in {
-      val result = wsUrl("/").get.futureValue
+      val result = wsUrl("/?name=Bob").get.futureValue
       result.status must be(404) // Maybe should be a 426, see #396
     }
     "give an Ok header (and hopefully a not implemented trailer) when routing a non-existent gRPC method" in {

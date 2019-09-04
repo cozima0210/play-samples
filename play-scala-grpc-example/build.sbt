@@ -22,8 +22,8 @@ lazy val `play-scala-grpc-example` = (project in file("."))
       akkaGrpcExtraGenerators += PlayScalaServerCodeGenerator,
       // #grpc_server_generators
       PlayKeys.devSettings ++= Seq(
-        "play.server.http.port" -> "disabled",
-        "play.server.https.port" -> "9443",
+        "play.server.http.port" -> "9000",
+        "play.server.https.port" -> "disabled",
         // Configures the keystore to use in Dev mode. This setting is equivalent to `play.server.https.keyStore.path`
         // in `application.conf`.
         "play.server.https.keyStore.path" -> "conf/selfsigned.keystore",

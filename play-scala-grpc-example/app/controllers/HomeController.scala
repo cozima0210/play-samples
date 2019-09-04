@@ -15,8 +15,8 @@ class HomeController @Inject()(greeterServiceClient: GreeterServiceClient,
                               ) extends InjectedController {
   // #grpc_client_injection
 
-  def index = Action.async {
-    val request = HelloRequest("Caplin")
+  def index(name: String) = Action.async {
+    val request = HelloRequest(name)
     // create a gRPC request
     val reply: Future[HelloReply] = greeterServiceClient.sayHello(request)
     // forward the gRPC response back as a plain String on an HTTP response

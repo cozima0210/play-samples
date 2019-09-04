@@ -5,8 +5,8 @@
 
 # Turn on HTTPS, turn off HTTP.
 # This should be https://example.com:9443
-JVM_OPTIONS="$JVM_OPTIONS -Dhttp.port=disabled"
-JVM_OPTIONS="$JVM_OPTIONS -Dhttps.port=9443"
+JVM_OPTIONS="$JVM_OPTIONS -Dhttp.port=9000"
+JVM_OPTIONS="$JVM_OPTIONS -Dhttps.port=disabled"
 
 # ssl-play requires an ALPN Agent. This is downdloaded and stored in the target folder.
 # This snippet detects when the ALPN agent hasn't been downloaded yet and runs
